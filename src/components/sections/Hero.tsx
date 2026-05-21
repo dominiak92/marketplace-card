@@ -1,120 +1,115 @@
 import { useState } from "react"
+import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Phone, ArrowDown } from "lucide-react"
 import { company } from "@/data/mock"
 
-function HeroLogo() {
-  const [error, setError] = useState(false)
-  return error ? (
-    <div className="inline-block bg-white rounded-2xl px-8 py-4">
-      <span className="font-black tracking-tight text-3xl text-slate-900">
-        AMILO<span className="text-red-600"> AGD</span>
-      </span>
-    </div>
-  ) : (
-    <div className="inline-block bg-white rounded-2xl px-6 py-4 shadow-2xl">
-      <img
-        src="/amilo-logo.png"
-        alt="AMILO AGD"
-        className="h-20 w-auto"
-        onError={() => setError(true)}
-      />
-    </div>
-  )
-}
-
 export function Hero() {
+  const [logoError, setLogoError] = useState(false)
+
   return (
-    <section className="relative min-h-screen bg-slate-900 hero-grid flex flex-col items-center justify-center pt-16 overflow-hidden">
-      {/* Red glow top-right */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-700/10 rounded-full blur-3xl pointer-events-none" />
-      {/* Red glow bottom-left */}
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-red-900/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-zinc-950">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero-image.mp4" type="video/mp4" />
+      </video>
+      {/* Gradient fade — ciemniej po lewej (tekst), rozjaśnienie ku prawej + vignette na dole */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center flex flex-col items-center">
-        {/* Logo */}
-        <HeroLogo />
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-10 py-28">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* Divider */}
-        <div className="flex items-center gap-4 mt-10 mb-8">
-          <div className="h-px w-16 bg-slate-700" />
-          <span className="text-slate-400 text-xs font-light tracking-[0.3em] uppercase">
-            Używany sprzęt premium
-          </span>
-          <div className="h-px w-16 bg-slate-700" />
-        </div>
+          {/* LEFT — tekst + kontakt */}
+          <div className="order-2 md:order-1">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-white/55 mb-5">
+              Sprzedaż i skup używanego AGD
+            </p>
+            <h1 className="font-extrabold text-white leading-[1.1] mb-5">
+              <span className="block text-3xl lg:text-[2.6rem]">Używany sprzęt AGD</span>
+              <span className="block text-3xl lg:text-[2.6rem] text-red-500">marek premium</span>
+            </h1>
+            <p className="text-white/65 text-sm leading-relaxed mb-10 max-w-sm">
+              Sprawdzone technicznie urządzenia Bosch, Siemens i Miele — w doskonałych cenach, stacjonarnie i online.
+            </p>
 
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight">
-          Sprawdzony sprzęt AGD<br />
-          <span className="text-red-500">najlepszych marek</span>
-        </h1>
-
-        {/* Brand strip */}
-        <div className="flex items-center justify-center gap-3 sm:gap-6 mt-7">
-          {["BOSCH", "SIEMENS", "Miele"].map((b, i) => (
-            <span key={b} className="flex items-center gap-3 sm:gap-6">
-              <span className="text-slate-200 font-semibold tracking-wide text-sm sm:text-base">
-                {b}
-              </span>
-              {i < 2 && <span className="text-slate-600 text-lg">·</span>}
-            </span>
-          ))}
-        </div>
-
-        {/* Description */}
-        <p className="text-slate-400 text-lg mt-7 max-w-2xl leading-relaxed">
-          {company.description}
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-10">
-          <Button
-            className="bg-red-600 hover:bg-red-700 text-white h-13 px-8 text-base gap-2 shadow-lg shadow-red-900/30 transition-all hover:shadow-red-900/50"
-            style={{ height: "52px" }}
-            asChild
-          >
-            <a href={company.olxUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4" />
-              Sprawdź ofertę OLX
-            </a>
-          </Button>
-          <Button
-            variant="outline"
-            className="border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white hover:border-slate-500 transition-all"
-            style={{ height: "52px", padding: "0 2rem", fontSize: "1rem" }}
-            asChild
-          >
-            <a href={`tel:${company.phoneRaw}`}>
-              <Phone className="w-4 h-4 mr-2" />
+            <a
+              href={`tel:${company.phoneRaw}`}
+              className="block text-2xl sm:text-3xl font-extrabold text-white hover:text-red-400 transition-colors tracking-tight leading-none mb-4"
+            >
               {company.phone}
             </a>
-          </Button>
-        </div>
-
-        {/* Stats row */}
-        <div className="grid grid-cols-3 gap-8 mt-16 pt-10 border-t border-slate-800 w-full max-w-lg">
-          {[
-            { value: "3", label: "Premium marki" },
-            { value: "100%", label: "Zweryfikowany sprzęt" },
-            { value: "OLX", label: "Bezpieczna sprzedaż" },
-          ].map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <div className="text-2xl sm:text-3xl font-extrabold text-white">{value}</div>
-              <div className="text-slate-500 text-xs sm:text-sm mt-1">{label}</div>
+            <div className="space-y-1 text-white/50 text-sm mb-9">
+              <a
+                href={`mailto:${company.email}`}
+                className="block hover:text-white/80 transition-colors"
+              >
+                {company.email}
+              </a>
+              <a
+                href={company.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-white/80 transition-colors"
+              >
+                {company.address.street}, {company.address.postal} {company.address.city}
+              </a>
             </div>
-          ))}
+
+            <Button
+              className="bg-red-600 hover:bg-red-700 text-white gap-2 h-11 px-8 text-sm shadow-lg shadow-red-900/40"
+              asChild
+            >
+              <a href={company.olxUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4" />
+                Oferta na OLX
+              </a>
+            </Button>
+          </div>
+
+          {/* RIGHT — logo dominujące */}
+          <div className="order-1 md:order-2 flex flex-col items-center gap-6">
+            <div className="relative flex items-center justify-center">
+              {/* Soft white radial glow — zastępuje biały prostokąt */}
+              <div className="absolute w-80 h-80 bg-white/[0.12] rounded-full blur-3xl" />
+              <div className="absolute w-52 h-52 bg-white/[0.14] rounded-full blur-2xl" />
+              {logoError ? (
+                <span className="relative font-black tracking-tight text-5xl drop-shadow-2xl">
+                  <span className="text-slate-200">AMI</span>
+                  <span className="text-red-500">LO</span>
+                  <span className="block text-center text-base font-semibold tracking-[0.35em] text-white/50 mt-1">AGD</span>
+                </span>
+              ) : (
+                <img
+                  src="/amilo-logo.png"
+                  alt="AMILO AGD"
+                  className="relative h-48 sm:h-56 w-auto drop-shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+                  style={{ filter: "drop-shadow(0 0 40px rgba(255,255,255,0.25)) drop-shadow(0 8px 30px rgba(0,0,0,0.6))" }}
+                  onError={() => setLogoError(true)}
+                />
+              )}
+            </div>
+
+            <div className="flex items-center justify-center gap-5 text-white/40 select-none">
+              <span className="text-[11px] font-black tracking-[0.2em]">BOSCH</span>
+              <span className="text-white/20">|</span>
+              <span className="text-[11px] font-light tracking-[0.2em]">SIEMENS</span>
+              <span className="text-white/20">|</span>
+              <span
+                className="text-[11px] font-bold tracking-wide"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                Miele
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <a
-        href="#marki"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-600 hover:text-slate-400 transition-colors animate-bounce"
-        aria-label="Przewiń w dół"
-      >
-        <ArrowDown className="w-5 h-5" />
-      </a>
     </section>
   )
 }

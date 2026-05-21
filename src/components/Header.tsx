@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { ExternalLink } from "lucide-react"
-import { company } from "@/data/mock"
 
 const navLinks = [
   { href: "#marki", label: "Marki" },
@@ -10,23 +7,18 @@ const navLinks = [
   { href: "#kontakt", label: "Kontakt" },
 ]
 
-function Logo({ inverted }: { inverted: boolean }) {
-  const [error, setError] = useState(false)
-  return error ? (
-    <span
-      className={`font-black tracking-tight text-xl select-none ${inverted ? "text-white" : "text-slate-900"}`}
-    >
-      AMILO<span className="text-red-600"> AGD</span>
-    </span>
-  ) : (
-    <div className={`${inverted ? "bg-white/10 backdrop-blur-sm" : ""} rounded-lg p-1 transition-all`}>
-      <img
-        src="/amilo-logo.png"
-        alt="AMILO AGD"
-        className="h-9 w-auto"
-        onError={() => setError(true)}
-      />
-    </div>
+function Logo({ scrolled }: { scrolled: boolean }) {
+  return (
+    <a href="#" className="select-none">
+      <span
+        className={`font-black tracking-tight text-xl transition-colors ${
+          scrolled ? "text-slate-500" : "text-white/70"
+        }`}
+      >
+        AMI
+      </span>
+      <span className="font-black tracking-tight text-xl text-red-500">LO</span>
+    </a>
   )
 }
 
@@ -48,9 +40,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="#">
-          <Logo inverted={!scrolled} />
-        </a>
+        <Logo scrolled={scrolled} />
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map(({ href, label }) => (
@@ -67,13 +57,6 @@ export function Header() {
             </a>
           ))}
         </nav>
-
-        <Button className="bg-red-600 hover:bg-red-700 text-white gap-2 shadow-sm" size="sm" asChild>
-          <a href={company.olxUrl} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="w-4 h-4" />
-            <span className="hidden sm:inline">OLX</span>
-          </a>
-        </Button>
       </div>
     </header>
   )
