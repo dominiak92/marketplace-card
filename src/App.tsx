@@ -1,12 +1,26 @@
-import { Button } from "@/components/ui/button"
+import { Header } from "@/components/Header"
+import { Hero } from "@/components/sections/Hero"
+import { Stats } from "@/components/sections/Stats"
+import { Categories } from "@/components/sections/Categories"
+import { Listings } from "@/components/sections/Listings"
+import { About } from "@/components/sections/About"
+import { Contact } from "@/components/sections/Contact"
+import { Footer } from "@/components/Footer"
 
 function App() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-8">
-      <h1 className="text-3xl font-bold">marketplace-card</h1>
-      <p className="text-muted-foreground">React + Vite + shadcn/ui</p>
-      <Button>Get started</Button>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Stats />
+        <Categories />
+        <Listings />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   )
 }
 
