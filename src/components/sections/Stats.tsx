@@ -4,8 +4,8 @@ import { seller } from "@/data/mock"
 const stats = [
   {
     icon: ShoppingBag,
-    value: `${seller.listingCount}+`,
-    label: "Aktywnych ogłoszeń",
+    value: "OLX",
+    label: "Sprzedaję przez OLX",
     iconClass: "text-amber-500 bg-amber-50",
   },
   {

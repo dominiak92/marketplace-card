@@ -4,7 +4,6 @@ import { ExternalLink } from "lucide-react"
 import { seller } from "@/data/mock"
 
 const navLinks = [
-  { href: "#oferty", label: "Oferty" },
   { href: "#kategorie", label: "Kategorie" },
   { href: "#o-mnie", label: "O mnie" },
   { href: "#kontakt", label: "Kontakt" },

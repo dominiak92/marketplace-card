@@ -82,8 +82,8 @@ export function Hero() {
                 className="bg-amber-500 hover:bg-amber-600 text-white gap-2 h-12 px-8 text-base shadow-md shadow-amber-200 hover:shadow-lg hover:shadow-amber-300 transition-all duration-200"
                 asChild
               >
-                <a href="#oferty">
-                  Przeglądaj oferty
+                <a href={seller.olxUrl} target="_blank" rel="noopener noreferrer">
+                  Zobacz mój profil OLX
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
@@ -133,11 +133,10 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-2 pt-5 border-t border-gray-100">
+              <div className="grid grid-cols-2 gap-2 pt-5 border-t border-gray-100">
                 {[
-                  { value: `${seller.listingCount}+`, label: "ogłoszeń" },
-                  { value: `${seller.reviewCount}+`, label: "opinii", bordered: true },
-                  { value: `${seller.yearsActive}`, label: "lat na OLX" },
+                  { value: `${seller.reviewCount}+`, label: "opinii" },
+                  { value: `${seller.yearsActive}`, label: "lat na OLX", bordered: true },
                 ].map(({ value, label, bordered }) => (
                   <div
                     key={label}

@@ -20,7 +20,7 @@ export function Categories() {
           {categories.map((cat) => (
             <a
               key={cat.id}
-              href="#oferty"
+              href="#kontakt"
               className={`group ${cat.color} border rounded-2xl p-5 flex flex-col items-center text-center gap-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer`}
             >
               <span className="text-4xl transition-transform duration-200 group-hover:scale-110 select-none">
