@@ -1,36 +1,43 @@
-import { categories } from "@/data/mock"
+import { ExternalLink } from "lucide-react"
+import { productCategories, company } from "@/data/mock"
 
-export function Categories() {
+export function Offer() {
   return (
-    <section id="kategorie" className="py-20 bg-stone-50">
+    <section id="oferta" className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
-            Asortyment
+          <span className="text-red-600 font-semibold text-sm uppercase tracking-widest">
+            Oferta
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
-            Co znajdziesz w moich ogłoszeniach?
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+            Co mamy w sprzedaży?
           </h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto leading-relaxed">
-            Szeroki wybór produktów w dobrym stanie — od elektroniki po meble. Zawsze uczciwie opisane.
+          <p className="text-slate-500 mt-3 max-w-lg mx-auto leading-relaxed">
+            Wysokiej jakości, używany sprzęt AGD marek Bosch, Siemens i Miele — sprawdzony i gotowy do pracy.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {categories.map((cat) => (
-            <a
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {productCategories.map((cat) => (
+            <div
               key={cat.id}
-              href="#kontakt"
-              className={`group ${cat.color} border rounded-2xl p-5 flex flex-col items-center text-center gap-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer`}
+              className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
             >
-              <span className="text-4xl transition-transform duration-200 group-hover:scale-110 select-none">
-                {cat.emoji}
-              </span>
-              <div>
-                <div className="font-semibold text-gray-800 text-sm">{cat.name}</div>
-                <div className="text-xs text-gray-400 mt-0.5">{cat.count} ogłoszeń</div>
-              </div>
-            </a>
+              <div className="text-4xl mb-4 select-none">{cat.emoji}</div>
+              <h3 className="font-bold text-slate-900 text-lg">{cat.name}</h3>
+              <p className="text-slate-500 text-sm mt-2 leading-relaxed flex-1">
+                {cat.description}
+              </p>
+              <a
+                href={company.olxUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 flex items-center gap-1.5 text-red-600 hover:text-red-700 font-semibold text-sm transition-colors group"
+              >
+                Sprawdź ofertę
+                <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </div>
           ))}
         </div>
       </div>

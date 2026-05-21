@@ -1,28 +1,78 @@
-import { seller } from "@/data/mock"
+import { useState } from "react"
+import { company } from "@/data/mock"
+
+function FooterLogo() {
+  const [error, setError] = useState(false)
+  return error ? (
+    <span className="font-black tracking-tight text-lg text-white">
+      AMILO<span className="text-red-500"> AGD</span>
+    </span>
+  ) : (
+    <div className="bg-white rounded-lg px-3 py-2 inline-block">
+      <img
+        src="/amilo-logo.png"
+        alt="AMILO AGD"
+        className="h-8 w-auto"
+        onError={() => setError(true)}
+      />
+    </div>
+  )
+}
 
 export function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-500 py-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
-            {seller.initials}
+    <footer className="bg-slate-950 text-slate-400 py-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid sm:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
+          {/* Brand */}
+          <div className="space-y-3">
+            <FooterLogo />
+            <p className="text-sm leading-relaxed text-slate-500">
+              Sprawdzony używany sprzęt AGD premium — Bosch, Siemens, Miele.
+            </p>
           </div>
-          <span className="text-white font-semibold text-sm">{seller.name}</span>
+
+          {/* Dane firmy */}
+          <div className="space-y-2">
+            <h4 className="text-white font-semibold text-sm mb-3">Dane firmy</h4>
+            <p className="text-sm">{company.legalName}</p>
+            <p className="text-sm">NIP: {company.nip}</p>
+            <p className="text-sm">
+              {company.address.street},<br />
+              {company.address.postal} {company.address.city}
+            </p>
+            <p className="text-sm text-slate-600">{company.address.region}</p>
+          </div>
+
+          {/* Kontakt */}
+          <div className="space-y-2">
+            <h4 className="text-white font-semibold text-sm mb-3">Kontakt</h4>
+            <a
+              href={`tel:${company.phoneRaw}`}
+              className="block text-sm hover:text-white transition-colors"
+            >
+              {company.phone}
+            </a>
+            <a
+              href={`mailto:${company.email}`}
+              className="block text-sm hover:text-white transition-colors"
+            >
+              {company.email}
+            </a>
+            <a
+              href={company.olxUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm text-red-400 hover:text-red-300 transition-colors mt-3"
+            >
+              Profil OLX →
+            </a>
+          </div>
         </div>
 
-        <p className="text-xs text-center">
-          © {new Date().getFullYear()} {seller.name} · Prywatna strona sprzedawcy OLX
+        <p className="text-xs text-slate-600 text-center mt-6">
+          © {new Date().getFullYear()} {company.legalName} · Wszelkie prawa zastrzeżone
         </p>
-
-        <a
-          href={seller.olxUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-amber-400 hover:text-amber-300 text-xs font-semibold transition-colors"
-        >
-          OLX.pl →
-        </a>
       </div>
     </footer>
   )

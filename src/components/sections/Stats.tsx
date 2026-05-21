@@ -1,47 +1,35 @@
-import { ShoppingBag, Star, Users, Calendar } from "lucide-react"
-import { seller } from "@/data/mock"
+import { brands } from "@/data/mock"
 
-const stats = [
-  {
-    icon: ShoppingBag,
-    value: "OLX",
-    label: "Sprzedaję przez OLX",
-    iconClass: "text-amber-500 bg-amber-50",
-  },
-  {
-    icon: Star,
-    value: `${seller.rating}/5`,
-    label: "Średnia ocen",
-    iconClass: "text-yellow-500 bg-yellow-50",
-  },
-  {
-    icon: Users,
-    value: `${seller.reviewCount}+`,
-    label: "Zadowolonych kupujących",
-    iconClass: "text-green-500 bg-green-50",
-  },
-  {
-    icon: Calendar,
-    value: `${seller.yearsActive} lata`,
-    label: "Aktywny na OLX",
-    iconClass: "text-blue-500 bg-blue-50",
-  },
-]
-
-export function Stats() {
+export function Brands() {
   return (
-    <section className="bg-white py-14 border-y border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map(({ icon: Icon, value, label, iconClass }) => (
-            <div key={label} className="flex flex-col items-center text-center group">
+    <section id="marki" className="bg-white py-16 border-b border-slate-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <p className="text-center text-xs text-slate-400 font-semibold uppercase tracking-widest mb-10">
+          Specjalizujemy się w sprzęcie tych marek
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+          {brands.map((brand) => (
+            <div
+              key={brand.id}
+              className="flex flex-col items-center text-center px-8 py-8 group"
+            >
+              {/* Brand name */}
               <div
-                className={`w-12 h-12 rounded-2xl ${iconClass} flex items-center justify-center mb-3 transition-transform duration-200 group-hover:scale-110`}
+                className={`text-4xl sm:text-5xl ${brand.weight} leading-none transition-transform duration-200 group-hover:scale-105`}
+                style={{ color: brand.color }}
               >
-                <Icon className="w-6 h-6" />
+                {brand.name}
               </div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-gray-900">{value}</div>
-              <div className="text-sm text-gray-500 mt-1">{label}</div>
+
+              {/* Accent line */}
+              <div
+                className="w-8 h-0.5 mt-4 mb-3 rounded-full opacity-70"
+                style={{ backgroundColor: brand.color }}
+              />
+
+              {/* Tagline */}
+              <p className="text-slate-500 text-sm">{brand.tagline}</p>
             </div>
           ))}
         </div>

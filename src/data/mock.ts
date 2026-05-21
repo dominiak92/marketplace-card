@@ -1,41 +1,94 @@
-export const seller = {
-  name: "Marek Nowak",
-  initials: "MN",
-  tagline: "Sprzedaję rzetelnie, wysyłam szybko",
+export const company = {
+  name: "AMILO AGD",
+  legalName: "AMILO Agnieszka Łobaczewska",
+  nip: "4290046230",
+  tagline: "Sprawdzony sprzęt AGD premium",
   description:
-    "Cześć! Sprzedaję różne rzeczy w świetnym stanie — od elektroniki po odzież i sprzęt domowy. Każdy przedmiot jest dokładnie opisany i sfotografowany. Działam na OLX od 2019 roku i zebrałem ponad 480 pozytywnych opinii.",
-  location: "Warszawa, Mazowieckie",
-  phone: "+48 123 456 789",
-  email: "marek.nowak@example.com",
-  rating: 4.9,
-  reviewCount: 487,
-  yearsActive: 5,
-  joinYear: 2019,
-  olxUrl: "#",
+    "Specjalizujemy się w sprzedaży sprawdzonego technicznie, używanego sprzętu AGD renomowanych marek. Każde urządzenie przechodzi weryfikację przed sprzedażą — kupujesz z pewnością co do stanu.",
+  phone: "726 308 069",
+  phoneRaw: "726308069",
+  email: "amilo_agd@interia.pl",
+  address: {
+    street: "ul. Boczna 3",
+    postal: "66-435",
+    city: "Krzeszyce",
+    region: "LUBUSKIE",
+    full: "ul. Boczna 3, 66-435 Krzeszyce",
+    mapsUrl: "https://maps.google.com/?q=ul.+Boczna+3,+66-435+Krzeszyce",
+  },
+  olxUrl: "https://www.olx.pl/oferty/uzytkownik/1Bzpe3",
 }
 
-export const categories = [
-  { id: 1, name: "Elektronika", emoji: "📱", count: 45, color: "bg-blue-50 hover:bg-blue-100 border-blue-100" },
-  { id: 2, name: "Odzież i moda", emoji: "👕", count: 89, color: "bg-pink-50 hover:bg-pink-100 border-pink-100" },
-  { id: 3, name: "Dom i ogród", emoji: "🏡", count: 67, color: "bg-green-50 hover:bg-green-100 border-green-100" },
-  { id: 4, name: "Sport i hobby", emoji: "⚽", count: 34, color: "bg-orange-50 hover:bg-orange-100 border-orange-100" },
-  { id: 5, name: "Dla dzieci", emoji: "🧸", count: 52, color: "bg-yellow-50 hover:bg-yellow-100 border-yellow-100" },
-  { id: 6, name: "Książki", emoji: "📚", count: 28, color: "bg-purple-50 hover:bg-purple-100 border-purple-100" },
-  { id: 7, name: "Motoryzacja", emoji: "🚗", count: 19, color: "bg-slate-50 hover:bg-slate-100 border-slate-100" },
-  { id: 8, name: "Pozostałe", emoji: "📦", count: 189, color: "bg-amber-50 hover:bg-amber-100 border-amber-100" },
-]
-
-export const reviews = [
+export const brands = [
   {
-    initials: "AK",
-    name: "Anna K.",
-    gradient: "from-blue-400 to-indigo-500",
-    text: "Szybka wysyłka, wszystko zgodne z opisem. Polecam sprzedawcę bez zastrzeżeń!",
+    id: 1,
+    name: "BOSCH",
+    tagline: "Niezawodność w każdym domu",
+    weight: "font-black tracking-tight",
+    color: "#e30613",
   },
   {
-    initials: "PW",
-    name: "Piotr W.",
-    gradient: "from-green-400 to-emerald-500",
-    text: "Produkt wyglądał dokładnie jak na zdjęciach, stan idealny. Zdecydowanie skorzystam ponownie!",
+    id: 2,
+    name: "SIEMENS",
+    tagline: "Technologia dla nowoczesnych",
+    weight: "font-extralight tracking-[0.18em]",
+    color: "#009999",
+  },
+  {
+    id: 3,
+    name: "Miele",
+    tagline: "Immer Besser — zawsze lepsze",
+    weight: "font-bold italic",
+    color: "#1c1c2e",
+  },
+]
+
+export const productCategories = [
+  {
+    id: 1,
+    name: "Pralki",
+    emoji: "🫧",
+    description: "Wolnostojące i do zabudowy, klasy A i A+. Pełen wybór pojemności.",
+  },
+  {
+    id: 2,
+    name: "Lodówki",
+    emoji: "❄️",
+    description: "Wolnostojące, side-by-side i do zabudowy. Różne pojemności i rozmiary.",
+  },
+  {
+    id: 3,
+    name: "Suszarki",
+    emoji: "💨",
+    description: "Kondensacyjne i z pompą ciepła. Energooszczędne, ciche.",
+  },
+  {
+    id: 4,
+    name: "Zmywarki",
+    emoji: "✨",
+    description: "45 i 60 cm, wolnostojące i do zabudowy. Cicha i wydajna praca.",
+  },
+]
+
+export const whyUsPoints = [
+  {
+    icon: "🔍",
+    title: "Zweryfikowany technicznie",
+    desc: "Każde urządzenie sprawdzamy przed wystawieniem. Żadnych ukrytych usterek.",
+  },
+  {
+    icon: "🏆",
+    title: "Tylko premium marki",
+    desc: "Bosch, Siemens i Miele — trwałość i niezawodność w doskonałej cenie.",
+  },
+  {
+    icon: "🚚",
+    title: "Odbiór lub dostawa",
+    desc: "Zapraszamy do Krzeszyc lub organizujemy transport do klienta.",
+  },
+  {
+    icon: "🤝",
+    title: "Uczciwa sprzedaż",
+    desc: "Stan zawsze zgodny z opisem. Sprzedajemy z pełną transparentnością.",
   },
 ]
