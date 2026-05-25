@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion"
 import { company } from "@/data/mock"
 
 const brandLogos = [
@@ -30,26 +31,59 @@ export function Hero() {
 
           {/* LEFT — tekst + kontakt */}
           <div className="order-2 md:order-1 max-w-sm">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-5">
+            <motion.p
+              initial={{ opacity: 0, letterSpacing: "0.5em" }}
+              animate={{ opacity: 1, letterSpacing: "0.3em" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-5"
+            >
               Używany sprzęt AGD
-            </p>
+            </motion.p>
 
             <h1 className="font-extrabold text-white leading-[1.08] mb-5">
-              <span className="block text-[2rem] lg:text-[2.4rem]">Sprzęt premium.</span>
-              <span className="block text-[2rem] lg:text-[2.4rem] text-red-500">W dobrej cenie.</span>
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-[2rem] lg:text-[2.4rem]"
+              >
+                Sprzęt premium.
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-[2rem] lg:text-[2.4rem] text-red-500"
+              >
+                W dobrej cenie.
+              </motion.span>
             </h1>
 
-            <p className="text-white/60 text-sm leading-relaxed mb-10">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.85 }}
+              className="text-white/60 text-sm leading-relaxed mb-10"
+            >
               M.in. Bosch, Siemens i Miele — sprawdzone technicznie, w doskonałych cenach. Stacjonarnie i online.
-            </p>
+            </motion.p>
 
-            <a
+            <motion.a
               href={`tel:${company.phoneRaw}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
               className="block text-2xl sm:text-[1.7rem] font-extrabold text-white hover:text-red-400 transition-colors tracking-tight leading-none mb-3"
             >
               {company.phone}
-            </a>
-            <div className="space-y-1 text-white/45 text-sm mb-10">
+            </motion.a>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.05 }}
+              className="space-y-1 text-white/45 text-sm mb-10"
+            >
               <a
                 href={`mailto:${company.email}`}
                 className="block hover:text-white/75 transition-colors"
@@ -64,13 +98,16 @@ export function Hero() {
               >
                 {company.address.street}, {company.address.postal} {company.address.city}
               </a>
-            </div>
+            </motion.div>
 
             {/* CTA — INOX style */}
-            <a
+            <motion.a
               href={company.olxUrl}
               target="_blank"
               rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.15 }}
               className="inline-flex items-center gap-3 px-6 h-12 border border-white/25 bg-white/5 hover:bg-white/10 hover:border-white/40 text-white/85 hover:text-white transition-all duration-200 rounded-sm group"
             >
               <span className="text-[11px] font-semibold tracking-[0.2em] uppercase">
@@ -78,17 +115,28 @@ export function Hero() {
               </span>
               <span className="w-px h-3.5 bg-white/20 group-hover:bg-white/35 transition-colors" />
               <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
-            </a>
+            </motion.a>
           </div>
 
           {/* RIGHT — logo + marki */}
           <div className="order-1 md:order-2 flex flex-col items-center gap-10">
             {/* Logo AMILO */}
-            <div className="relative flex items-center justify-center">
-              <div className="absolute w-96 h-96 rounded-full"
-                style={{ background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)" }} />
-              <div className="absolute w-64 h-64 rounded-full"
-                style={{ background: "radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%)" }} />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.88 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="relative flex items-center justify-center"
+            >
+              <div
+                className="absolute w-96 h-96 rounded-full"
+                style={{ background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)" }}
+              />
+              <motion.div
+                className="absolute w-64 h-64 rounded-full"
+                style={{ background: "radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%)" }}
+                animate={{ scale: [1, 1.08, 1], opacity: [0.12, 0.20, 0.12] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
 
               {logoError ? (
                 <span className="relative font-black tracking-tight text-6xl drop-shadow-2xl">
@@ -108,10 +156,15 @@ export function Hero() {
                   onError={() => setLogoError(true)}
                 />
               )}
-            </div>
+            </motion.div>
 
             {/* Marki — loga PNG */}
-            <div className="w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="w-full"
+            >
               <div className="flex items-center gap-3 mb-6">
                 <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/15" />
                 <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-white/30 md:text-white/50 font-semibold">
@@ -135,7 +188,7 @@ export function Hero() {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
         </div>
