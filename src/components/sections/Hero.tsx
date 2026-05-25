@@ -20,7 +20,7 @@ export function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/hero-image.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dm8t0wtyg/video/upload/v1779706199/7086407-uhd_4096_2160_25fps_clryca.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/25" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
