@@ -6,7 +6,7 @@ import { DrawLine } from "@/components/motion/DrawLine"
 
 export function WhyUs() {
   return (
-    <section id="o-nas" className="py-16 sm:py-24 bg-white">
+    <section id="o-nas" className="py-10 sm:py-14 bg-white">
       <div className="max-w-5xl mx-auto px-6 sm:px-10">
 
         <FadeUp>

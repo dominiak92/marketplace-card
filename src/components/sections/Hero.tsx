@@ -65,7 +65,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.85 }}
               className="text-white/60 text-sm leading-relaxed mb-10"
             >
-              M.in. Bosch, Siemens i Miele — sprawdzone technicznie, w doskonałych cenach. Stacjonarnie i online.
+              Wyposażymy Twój dom kompleksowo za 1/2 ceny nowego sprzętu. M.in. Bosch, Siemens i Miele — sprawdzone technicznie, z paragonem lub FV. Stacjonarnie i online.
             </motion.p>
 
             <motion.a

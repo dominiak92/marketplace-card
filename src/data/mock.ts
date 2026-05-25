@@ -72,11 +72,6 @@ export const productCategories = [
 
 export const whyUsPoints = [
   {
-    icon: "🔍",
-    title: "Zweryfikowany technicznie",
-    desc: "Każde urządzenie sprawdzamy przed wystawieniem. Żadnych ukrytych usterek.",
-  },
-  {
     icon: "🏆",
     title: "Tylko premium marki",
     desc: "M.in. Bosch, Siemens, Miele — trwałość i niezawodność w doskonałej cenie.",
@@ -87,8 +82,13 @@ export const whyUsPoints = [
     desc: "Zapraszamy do Krzeszyc lub organizujemy transport do klienta.",
   },
   {
-    icon: "🤝",
-    title: "Uczciwa sprzedaż",
-    desc: "Stan zawsze zgodny z opisem. Sprzedajemy z pełną transparentnością.",
+    icon: "🧾",
+    title: "Paragon lub faktura VAT",
+    desc: "Na każdy zakupiony sprzęt wystawiamy paragon lub FV. Pełna dokumentacja bez wyjątków.",
+  },
+  {
+    icon: "✅",
+    title: "Gwarancja rozruchowa",
+    desc: "Udzielamy gwarancji rozruchowej — urządzenie jest sprawdzone i działa przed wydaniem.",
   },
 ]

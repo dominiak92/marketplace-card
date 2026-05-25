@@ -6,11 +6,25 @@ import { Contact } from "@/components/sections/Contact"
 import { Footer } from "@/components/Footer"
 
 function DarkToLight() {
-  return <div className="h-8 bg-gradient-to-b from-zinc-950 to-white" />
+  return (
+    <div className="relative h-12 bg-white overflow-hidden">
+      <div
+        className="absolute inset-0 bg-zinc-950"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 25%, 0 100%)" }}
+      />
+    </div>
+  )
 }
 
 function LightToDark() {
-  return <div className="h-8 bg-gradient-to-b from-white to-zinc-950" />
+  return (
+    <div className="relative h-12 bg-zinc-950 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-white"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 45%)" }}
+      />
+    </div>
+  )
 }
 
 function App() {

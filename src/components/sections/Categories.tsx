@@ -6,7 +6,7 @@ import { DrawLine } from "@/components/motion/DrawLine"
 
 export function Offer() {
   return (
-    <section id="oferta" className="bg-zinc-950 py-20 sm:py-28">
+    <section id="oferta" className="bg-zinc-950 pt-8 sm:pt-10 pb-20 sm:pb-28">
       <div className="max-w-5xl mx-auto px-6 sm:px-10">
 
         {/* Header */}
