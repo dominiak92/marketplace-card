@@ -4,8 +4,14 @@ import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContai
 
 export function Stats() {
   return (
-    <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
-      <div className="max-w-5xl mx-auto px-6 sm:px-10">
+    <section className="relative py-12 sm:py-16 bg-white border-b border-slate-100 overflow-hidden">
+      <img
+        src="/amilo-logo-napis-ciemny.webp"
+        alt=""
+        aria-hidden
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] opacity-[0.04] pointer-events-none select-none"
+      />
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 relative z-10">
         <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-slate-100">
           {stats.map((stat, i) => (
             <StaggerItem key={i} className="flex flex-col items-center justify-center py-8 px-6 text-center">
