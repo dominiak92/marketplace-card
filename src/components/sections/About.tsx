@@ -48,9 +48,7 @@ export function WhyUs() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="w-8 h-8 flex items-center justify-center text-red-600 mb-5">
-                    <Icon className="w-5 h-5" strokeWidth={1.5} />
-                  </div>
+                  <Icon className="w-5 h-5 text-red-600 mb-5" strokeWidth={1.5} />
 
                   <div className="w-5 h-px bg-red-600 mb-5 group-hover:w-8 transition-all duration-300" />
 
