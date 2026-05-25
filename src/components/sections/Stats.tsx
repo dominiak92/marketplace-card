@@ -14,7 +14,6 @@ export function Stats() {
                   value={stat.value}
                   duration={1.6}
                   className="text-4xl sm:text-5xl font-black text-slate-900 leading-none tabular-nums"
-                  format={stat.format}
                 />
                 {stat.suffix && (
                   <span className="text-2xl sm:text-3xl font-black text-red-600 leading-none mb-0.5">

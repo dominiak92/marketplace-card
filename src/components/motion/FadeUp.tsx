@@ -1,9 +1,9 @@
-import { motion } from "framer-motion"
+import { motion, TargetAndTransition } from "framer-motion"
 import { ReactNode } from "react"
 
 type Variant = "up" | "left" | "right" | "scale" | "blur"
 
-const initials: Record<Variant, object> = {
+const initials: Record<Variant, TargetAndTransition> = {
   up:    { opacity: 0, y: 28 },
   left:  { opacity: 0, x: -32 },
   right: { opacity: 0, x: 32 },
@@ -11,7 +11,7 @@ const initials: Record<Variant, object> = {
   blur:  { opacity: 0, filter: "blur(8px)" },
 }
 
-const targets: Record<Variant, object> = {
+const targets: Record<Variant, TargetAndTransition> = {
   up:    { opacity: 1, y: 0 },
   left:  { opacity: 1, x: 0 },
   right: { opacity: 1, x: 0 },
