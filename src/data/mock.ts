@@ -79,7 +79,7 @@ export const whyUsPoints = [
   {
     icon: "🏆",
     title: "Tylko premium marki",
-    desc: "Bosch, Siemens i Miele — trwałość i niezawodność w doskonałej cenie.",
+    desc: "M.in. Bosch, Siemens, Miele — trwałość i niezawodność w doskonałej cenie.",
   },
   {
     icon: "🚚",

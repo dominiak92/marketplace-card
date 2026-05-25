@@ -1,90 +1,115 @@
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, ExternalLink } from "lucide-react"
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react"
 import { company } from "@/data/mock"
+
+const MAP_EMBED =
+  "https://maps.google.com/maps?q=ul.+Boczna+3,+66-435+Krzeszyce&output=embed&hl=pl&z=14"
 
 export function Contact() {
   return (
-    <section id="kontakt" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <span className="text-red-600 font-semibold text-sm uppercase tracking-widest">
+    <section id="kontakt" className="py-16 sm:py-24 bg-zinc-950">
+      <div className="max-w-5xl mx-auto px-6 sm:px-10">
+
+        <div className="mb-14 sm:mb-16">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4">
             Kontakt
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
-            Skontaktuj się z nami
-          </h2>
-          <p className="text-slate-500 mt-3 max-w-lg mx-auto leading-relaxed">
-            Odpowiadamy szybko. Zapraszamy też do odbioru osobistego w Krzeszycach.
           </p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-[1.1]">
+            Skontaktuj się<br />z nami
+          </h2>
         </div>
 
-        {/* Contact cards */}
-        <div className="grid sm:grid-cols-3 gap-5 mb-8">
-          <a
-            href={`tel:${company.phoneRaw}`}
-            className="group flex flex-col items-center text-center p-7 rounded-2xl border border-slate-100 hover:border-red-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <div className="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-100 transition-colors">
-              <Phone className="w-5 h-5" />
-            </div>
-            <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">
-              Telefon
-            </div>
-            <div className="font-bold text-slate-900">{company.phone}</div>
-          </a>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-          <a
-            href={`mailto:${company.email}`}
-            className="group flex flex-col items-center text-center p-7 rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">
-              E-mail
-            </div>
-            <div className="font-bold text-slate-900 break-all">{company.email}</div>
-          </a>
+          {/* Lewa kolumna — dane kontaktowe */}
+          <div className="border-t border-zinc-800">
 
-          <a
-            href={company.address.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center text-center p-7 rounded-2xl border border-slate-100 hover:border-green-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <div className="w-12 h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
-              <MapPin className="w-5 h-5" />
-            </div>
-            <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">
-              Adres
-            </div>
-            <div className="font-bold text-slate-900">{company.address.street}</div>
-            <div className="text-slate-500 text-sm mt-0.5">
-              {company.address.postal} {company.address.city}
-            </div>
-            <div className="text-slate-400 text-xs mt-0.5">{company.address.region}</div>
-          </a>
-        </div>
-
-        {/* OLX CTA strip */}
-        <div className="bg-slate-900 rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-              Wolisz sprawdzić ofertę online?
-            </h3>
-            <p className="text-slate-400 mt-1.5 text-sm leading-relaxed">
-              Cały asortyment dostępny na naszym profilu OLX — zdjęcia, opisy, aktualne ceny.
-            </p>
-          </div>
-          <Button
-            className="bg-red-600 hover:bg-red-700 text-white gap-2 h-12 px-8 shadow-lg shadow-red-900/30 flex-shrink-0 transition-all"
-            asChild
-          >
-            <a href={company.olxUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4" />
-              Przejdź do profilu OLX
+            <a
+              href={`tel:${company.phoneRaw}`}
+              className="group flex items-center justify-between gap-6 py-6 border-b border-zinc-800 hover:bg-zinc-900/40 -mx-4 px-4 transition-colors duration-200"
+            >
+              <div className="flex items-center gap-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm border border-zinc-800 flex items-center justify-center text-white/40 group-hover:border-zinc-700 group-hover:text-white/70 transition-colors">
+                  <Phone className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-1">
+                    Telefon
+                  </p>
+                  <p className="text-white font-bold text-lg tracking-tight">
+                    {company.phone}
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-white/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 flex-shrink-0" />
             </a>
-          </Button>
+
+            <a
+              href={`mailto:${company.email}`}
+              className="group flex items-center justify-between gap-6 py-6 border-b border-zinc-800 hover:bg-zinc-900/40 -mx-4 px-4 transition-colors duration-200"
+            >
+              <div className="flex items-center gap-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm border border-zinc-800 flex items-center justify-center text-white/40 group-hover:border-zinc-700 group-hover:text-white/70 transition-colors">
+                  <Mail className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-1">
+                    E-mail
+                  </p>
+                  <p className="text-white font-bold tracking-tight">
+                    {company.email}
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-white/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 flex-shrink-0" />
+            </a>
+
+            <a
+              href={company.address.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-6 py-6 border-b border-zinc-800 hover:bg-zinc-900/40 -mx-4 px-4 transition-colors duration-200"
+            >
+              <div className="flex items-center gap-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm border border-zinc-800 flex items-center justify-center text-white/40 group-hover:border-zinc-700 group-hover:text-white/70 transition-colors">
+                  <MapPin className="w-4 h-4" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-1">
+                    Adres
+                  </p>
+                  <p className="text-white font-bold tracking-tight">
+                    {company.address.street}
+                  </p>
+                  <p className="text-white/50 text-sm">
+                    {company.address.postal} {company.address.city}
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-white/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 flex-shrink-0" />
+            </a>
+
+          </div>
+
+          {/* Prawa kolumna — mapa */}
+          <div className="relative border border-zinc-800 overflow-hidden rounded-sm lg:sticky lg:top-24">
+            <div className="aspect-[4/3] lg:aspect-auto lg:h-[380px] w-full bg-zinc-900">
+              <iframe
+                src={MAP_EMBED}
+                title="Lokalizacja AMILO AGD"
+                className="w-full h-full grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{ border: 0 }}
+              />
+            </div>
+            {/* overlay label */}
+            <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-zinc-950/90 to-transparent pointer-events-none">
+              <p className="text-white/60 text-xs font-semibold tracking-wider uppercase">
+                {company.address.street} · {company.address.city}
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

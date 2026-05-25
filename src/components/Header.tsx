@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
+import { Phone } from "lucide-react"
+import { company } from "@/data/mock"
 
 const navLinks = [
-  { href: "#marki", label: "Marki" },
   { href: "#oferta", label: "Oferta" },
   { href: "#o-nas", label: "O nas" },
   { href: "#kontakt", label: "Kontakt" },
@@ -9,15 +10,12 @@ const navLinks = [
 
 function Logo({ scrolled }: { scrolled: boolean }) {
   return (
-    <a href="#" className="select-none">
-      <span
-        className={`font-black tracking-tight text-xl transition-colors ${
-          scrolled ? "text-slate-500" : "text-white/70"
-        }`}
-      >
-        AMI
-      </span>
-      <span className="font-black tracking-tight text-xl text-red-500">LO</span>
+    <a href="#" className="select-none flex items-center">
+      <img
+        src={scrolled ? "/amilo-logo-napis-ciemny.webp" : "/amilo-logo-napis-jasny.webp"}
+        alt="AMILO AGD"
+        className="h-9 w-auto transition-all duration-300"
+      />
     </a>
   )
 }
@@ -42,6 +40,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Logo scrolled={scrolled} />
 
+        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map(({ href, label }) => (
             <a
@@ -57,6 +56,19 @@ export function Header() {
             </a>
           ))}
         </nav>
+
+        {/* Mobile — przycisk telefon */}
+        <a
+          href={`tel:${company.phoneRaw}`}
+          className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 active:scale-95 ${
+            scrolled
+              ? "bg-slate-100 hover:bg-slate-200 text-slate-700"
+              : "bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20"
+          }`}
+          aria-label="Zadzwoń"
+        >
+          <Phone className="w-4 h-4" strokeWidth={1.8} />
+        </a>
       </div>
     </header>
   )
