@@ -2,6 +2,7 @@ import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { company } from "@/data/mock"
+import { ScrollIndicator } from "@/components/motion/ScrollIndicator"
 
 const brandLogos = [
   { src: "/logo_bosch.png", alt: "Bosch" },
@@ -193,6 +194,8 @@ export function Hero() {
 
         </div>
       </div>
+
+      <ScrollIndicator />
     </section>
   )
 }

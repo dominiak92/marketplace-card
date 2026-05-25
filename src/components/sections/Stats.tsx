@@ -1,30 +1,33 @@
-const logos = [
-  { src: "/bosch-logo.svg", alt: "Bosch" },
-  { src: "/siemens-logo.svg", alt: "Siemens" },
-  { src: "/miele-logo.svg", alt: "Miele" },
-]
+import { stats } from "@/data/mock"
+import { AnimatedNumber } from "@/components/motion/AnimatedNumber"
+import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer"
 
-export function Brands() {
+export function Stats() {
   return (
-    <section id="marki" className="py-16 sm:py-20 bg-white border-b border-slate-100">
-      <div className="max-w-3xl mx-auto px-6">
-        <p className="text-center text-[10px] text-slate-400 font-semibold uppercase tracking-[0.25em] mb-14">
-          Specjalizujemy się m.in. w sprzęcie marek
-        </p>
-        <div className="grid grid-cols-3 items-center gap-8 sm:gap-16">
-          {logos.map((logo) => (
-            <div
-              key={logo.alt}
-              className="flex items-center justify-center h-10 sm:h-14"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-full w-auto object-contain"
-              />
-            </div>
+    <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
+      <div className="max-w-5xl mx-auto px-6 sm:px-10">
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-slate-100">
+          {stats.map((stat, i) => (
+            <StaggerItem key={i} className="flex flex-col items-center justify-center py-8 px-6 text-center">
+              <div className="flex items-end justify-center gap-0.5 mb-2">
+                <AnimatedNumber
+                  value={stat.value}
+                  duration={1.6}
+                  className="text-4xl sm:text-5xl font-black text-slate-900 leading-none tabular-nums"
+                  format={stat.format}
+                />
+                {stat.suffix && (
+                  <span className="text-2xl sm:text-3xl font-black text-red-600 leading-none mb-0.5">
+                    {stat.suffix}
+                  </span>
+                )}
+              </div>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-[0.15em]">
+                {stat.label}
+              </p>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

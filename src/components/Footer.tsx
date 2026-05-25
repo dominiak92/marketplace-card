@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react"
 import { company } from "@/data/mock"
 
 export function Footer() {
@@ -48,9 +49,9 @@ export function Footer() {
               href={company.olxUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-sm text-red-500/70 hover:text-red-400 transition-colors mt-3"
+              className="inline-flex items-center gap-2 mt-4 px-4 h-8 border border-red-600/30 text-red-400/80 hover:bg-red-600/10 hover:border-red-600/60 hover:text-red-400 transition-all text-[11px] font-semibold tracking-[0.15em] uppercase rounded-sm"
             >
-              Profil OLX →
+              Profil OLX <ArrowUpRight className="w-3 h-3" />
             </a>
           </div>
         </div>

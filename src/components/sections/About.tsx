@@ -1,8 +1,10 @@
+import { Award, Truck, Receipt, ShieldCheck } from "lucide-react"
 import { whyUsPoints } from "@/data/mock"
 import { FadeUp } from "@/components/motion/FadeUp"
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer"
-import { AnimatedNumber } from "@/components/motion/AnimatedNumber"
 import { DrawLine } from "@/components/motion/DrawLine"
+
+const pointIcons = [Award, Truck, Receipt, ShieldCheck]
 
 export function WhyUs() {
   return (
@@ -27,35 +29,41 @@ export function WhyUs() {
         </FadeUp>
 
         <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-slate-100">
-          {whyUsPoints.map((point, i) => (
-            <StaggerItem
-              key={i}
-              className="border-b border-r border-slate-100"
-            >
-              <div className="group relative p-8 hover:bg-slate-50 transition-colors duration-200 overflow-hidden h-full">
-                {/* ghosted number */}
-                <AnimatedNumber
-                  value={i + 1}
-                  className="absolute -bottom-4 -right-2 text-[6rem] font-black text-slate-900/[0.03] leading-none select-none pointer-events-none"
-                  aria-hidden
-                />
+          {whyUsPoints.map((point, i) => {
+            const Icon = pointIcons[i]
+            return (
+              <StaggerItem
+                key={i}
+                className="border-b border-r border-slate-100"
+              >
+                <div className="group relative p-8 hover:bg-slate-50 transition-colors duration-200 overflow-hidden h-full">
+                  <span
+                    className="absolute -bottom-4 -right-2 text-[6rem] font-black text-slate-900/[0.03] leading-none select-none pointer-events-none"
+                    aria-hidden
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
 
-                <AnimatedNumber
-                  value={i + 1}
-                  className="block text-[10px] font-semibold tracking-[0.3em] text-slate-300 uppercase mb-6"
-                />
+                  <span className="block text-[10px] font-semibold tracking-[0.3em] text-slate-300 uppercase mb-5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
 
-                <div className="w-5 h-px bg-red-600 mb-5 group-hover:w-8 transition-all duration-300" />
+                  <div className="w-8 h-8 flex items-center justify-center text-red-600 mb-5">
+                    <Icon className="w-5 h-5" strokeWidth={1.5} />
+                  </div>
 
-                <h3 className="font-bold text-slate-900 text-sm tracking-wide mb-3">
-                  {point.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {point.desc}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
+                  <div className="w-5 h-px bg-red-600 mb-5 group-hover:w-8 transition-all duration-300" />
+
+                  <h3 className="font-bold text-slate-900 text-sm tracking-wide mb-3">
+                    {point.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {point.desc}
+                  </p>
+                </div>
+              </StaggerItem>
+            )
+          })}
         </StaggerContainer>
 
       </div>

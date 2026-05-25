@@ -17,7 +17,15 @@ export const company = {
     mapsUrl: "https://maps.google.com/?q=ul.+Boczna+3,+66-435+Krzeszyce",
   },
   olxUrl: "https://www.olx.pl/oferty/uzytkownik/1Bzpe3",
+  siteUrl: "https://amilo-agd.pl",
 }
+
+export const stats = [
+  { value: 500, suffix: "+", label: "sprzedanych urządzeń" },
+  { value: 100, suffix: "%", label: "sprawdzonych przed sprzedażą" },
+  { value: 14, suffix: " dni", label: "gwarancja rozruchowa" },
+  { value: 2023, suffix: "", label: "rok założenia" },
+]
 
 export const brands = [
   {

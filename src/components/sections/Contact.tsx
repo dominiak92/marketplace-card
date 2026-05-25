@@ -2,14 +2,16 @@ import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react"
 import { company } from "@/data/mock"
 import { FadeUp } from "@/components/motion/FadeUp"
 import { DrawLine } from "@/components/motion/DrawLine"
+import { WashingMachineSVG } from "@/components/decorative/ApplianceSVG"
 
 const MAP_EMBED =
   "https://maps.google.com/maps?q=ul.+Boczna+3,+66-435+Krzeszyce&output=embed&hl=pl&z=14"
 
 export function Contact() {
   return (
-    <section id="kontakt" className="py-16 sm:py-24 bg-zinc-950">
-      <div className="max-w-5xl mx-auto px-6 sm:px-10">
+    <section id="kontakt" className="relative py-16 sm:py-24 bg-zinc-950 overflow-hidden">
+      <WashingMachineSVG className="absolute -left-20 top-1/2 -translate-y-1/2 w-[300px] sm:w-[360px] text-white opacity-[0.03] pointer-events-none select-none" />
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 relative z-10">
 
         <FadeUp>
           <div className="mb-14 sm:mb-16">
@@ -26,7 +28,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Lewa kolumna — dane kontaktowe */}
-          <FadeUp delay={0.1}>
+          <FadeUp delay={0.1} variant="left">
             <div className="border-t border-zinc-800">
 
               <a
@@ -98,7 +100,7 @@ export function Contact() {
           </FadeUp>
 
           {/* Prawa kolumna — mapa */}
-          <FadeUp delay={0.2}>
+          <FadeUp delay={0.2} variant="right">
             <div className="relative border border-zinc-800 overflow-hidden rounded-sm lg:sticky lg:top-24">
               <div className="aspect-[4/3] lg:aspect-auto lg:h-[380px] w-full bg-zinc-900">
                 <iframe

@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header"
 import { Hero } from "@/components/sections/Hero"
 import { Offer } from "@/components/sections/Categories"
+import { Stats } from "@/components/sections/Stats"
 import { WhyUs } from "@/components/sections/About"
 import { Contact } from "@/components/sections/Contact"
 import { Footer } from "@/components/Footer"
@@ -35,6 +36,7 @@ function App() {
         <Hero />
         <Offer />
         <DarkToLight />
+        <Stats />
         <WhyUs />
         <LightToDark />
         <Contact />

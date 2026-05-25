@@ -57,17 +57,18 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Mobile — przycisk telefon */}
+        {/* Mobile — CTA zadzwoń */}
         <a
           href={`tel:${company.phoneRaw}`}
-          className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 active:scale-95 ${
+          className={`md:hidden flex items-center gap-2 px-3.5 h-9 rounded-full transition-all duration-300 active:scale-95 ${
             scrolled
-              ? "bg-slate-100 hover:bg-slate-200 text-slate-700"
+              ? "bg-red-600 hover:bg-red-700 text-white shadow-sm"
               : "bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20"
           }`}
-          aria-label="Zadzwoń"
+          aria-label={`Zadzwoń: ${company.phone}`}
         >
-          <Phone className="w-4 h-4" strokeWidth={1.8} />
+          <Phone className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={2} />
+          <span className="text-[11px] font-semibold tracking-[0.1em] uppercase">Zadzwoń</span>
         </a>
       </div>
     </header>

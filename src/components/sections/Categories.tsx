@@ -3,11 +3,17 @@ import { productCategories, company } from "@/data/mock"
 import { FadeUp } from "@/components/motion/FadeUp"
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer"
 import { DrawLine } from "@/components/motion/DrawLine"
+import { WashingMachineSVG, FridgeSVG } from "@/components/decorative/ApplianceSVG"
 
 export function Offer() {
   return (
-    <section id="oferta" className="bg-zinc-950 pt-8 sm:pt-10 pb-20 sm:pb-28">
-      <div className="max-w-5xl mx-auto px-6 sm:px-10">
+    <section id="oferta" className="relative bg-zinc-950 pt-8 sm:pt-10 pb-20 sm:pb-28 overflow-hidden">
+
+      {/* Dekoracyjne wektory AGD */}
+      <WashingMachineSVG className="absolute -right-16 top-1/2 -translate-y-1/2 w-[340px] sm:w-[420px] text-white opacity-[0.035] pointer-events-none select-none" />
+      <FridgeSVG className="absolute -left-10 bottom-8 w-[220px] sm:w-[280px] text-white opacity-[0.025] pointer-events-none select-none" />
+
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 relative z-10">
 
         {/* Header */}
         <FadeUp>
@@ -98,7 +104,7 @@ export function Offer() {
           </a>
         </div>
 
-      </div>
+      </div>  {/* max-w container */}
     </section>
   )
 }
