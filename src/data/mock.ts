@@ -67,9 +67,9 @@ export const productCategories = [
   },
   {
     id: 3,
-    name: "Suszarki",
-    emoji: "💨",
-    description: "Kondensacyjne i z pompą ciepła. Energooszczędne, ciche.",
+    name: "Sprzęt RTV",
+    emoji: "📻",
+    description: "Wzmacniacze, amplitunery, odtwarzacze CD, magnetofony, VHS i gramofony.",
   },
   {
     id: 4,
