@@ -17,6 +17,7 @@ export const company = {
     mapsUrl: "https://maps.google.com/?q=ul.+Boczna+3,+66-435+Krzeszyce",
   },
   olxUrl: "https://www.olx.pl/oferty/uzytkownik/1Bzpe3",
+  googleMapsUrl: "https://share.google/vbCCuPD9QZFnjeRUJ",
   siteUrl: "https://amilo-agd.pl",
 }
 

@@ -5,7 +5,7 @@ import { DrawLine } from "@/components/motion/DrawLine"
 import { WashingMachineSVG } from "@/components/decorative/ApplianceSVG"
 
 const MAP_EMBED =
-  "https://maps.google.com/maps?q=ul.+Boczna+3,+66-435+Krzeszyce&output=embed&hl=pl&z=14"
+  "https://maps.google.com/maps?q=Amilo+AGD,+ul.+Boczna+3,+66-435+Krzeszyce&output=embed&hl=pl&z=16"
 
 export function Contact() {
   return (
@@ -72,7 +72,7 @@ export function Contact() {
               </a>
 
               <a
-                href={company.address.mapsUrl}
+                href={company.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-6 py-6 border-b border-zinc-800 hover:bg-zinc-900/40 -mx-4 px-4 transition-colors duration-200"

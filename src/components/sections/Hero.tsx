@@ -95,7 +95,7 @@ export function Hero() {
                 {company.email}
               </a>
               <a
-                href={company.address.mapsUrl}
+                href={company.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:text-white/75 transition-colors"
