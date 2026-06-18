@@ -25,7 +25,7 @@ export const stats = [
   { value: 500, suffix: "+", label: "sprzedanych urządzeń" },
   { value: 100, suffix: "%", label: "sprawdzonych przed sprzedażą" },
   { value: 1, suffix: " miesiąc", label: "gwarancja rozruchowa" },
-  { value: 2023, suffix: "", label: "rok założenia" },
+  { value: 2010, suffix: "", label: "rok założenia" },
 ]
 
 export const brands = [
