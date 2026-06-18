@@ -57,7 +57,7 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Mobile — CTA zadzwoń */}
+        {/* Mobile - CTA zadzwoń */}
         <a
           href={`tel:${company.phoneRaw}`}
           className={`md:hidden flex items-center gap-2 px-3.5 h-9 rounded-full transition-all duration-300 active:scale-95 ${

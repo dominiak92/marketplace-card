@@ -4,7 +4,7 @@ export const company = {
   nip: "4290046230",
   tagline: "Sprawdzony sprzęt AGD premium",
   description:
-    "Specjalizujemy się w sprzedaży sprawdzonego technicznie, używanego sprzętu AGD renomowanych marek. Każde urządzenie przechodzi weryfikację przed sprzedażą — kupujesz z pewnością co do stanu.",
+    "Specjalizujemy się w sprzedaży sprawdzonego technicznie, używanego sprzętu AGD renomowanych marek. Każde urządzenie przechodzi weryfikację przed sprzedażą - kupujesz z pewnością co do stanu.",
   phone: "726 308 069",
   phoneRaw: "726308069",
   email: "kontakt@amilo-agd.pl",
@@ -45,7 +45,7 @@ export const brands = [
   {
     id: 3,
     name: "Miele",
-    tagline: "Immer Besser — zawsze lepsze",
+    tagline: "Immer Besser - zawsze lepsze",
     weight: "font-bold italic",
     color: "#1c1c2e",
   },
@@ -82,7 +82,7 @@ export const whyUsPoints = [
   {
     icon: "🏆",
     title: "Tylko premium marki",
-    desc: "M.in. Bosch, Siemens, Miele — trwałość i niezawodność w doskonałej cenie.",
+    desc: "M.in. Bosch, Siemens, Miele - trwałość i niezawodność w doskonałej cenie.",
   },
   {
     icon: "🚚",
@@ -97,6 +97,6 @@ export const whyUsPoints = [
   {
     icon: "✅",
     title: "Gwarancja rozruchowa",
-    desc: "Udzielamy gwarancji rozruchowej — urządzenie jest sprawdzone i działa przed wydaniem.",
+    desc: "Udzielamy gwarancji rozruchowej - urządzenie jest sprawdzone i działa przed wydaniem.",
   },
 ]

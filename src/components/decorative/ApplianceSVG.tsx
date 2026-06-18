@@ -106,7 +106,7 @@ export function FridgeSVG({ className }: { className?: string }) {
       {/* Bottom hinge */}
       <rect x="5" y="292" width="10" height="16" rx="2" stroke="currentColor" strokeWidth="0.7" />
 
-      {/* Freezer interior — dashed box */}
+      {/* Freezer interior - dashed box */}
       <rect x="18" y="18" width="110" height="64" rx="4" stroke="currentColor" strokeWidth="0.6" strokeDasharray="5 3" />
 
       {/* Temp display in freezer */}

@@ -30,7 +30,7 @@ export function Hero() {
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-10 py-28">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT — tekst + kontakt */}
+          {/* LEFT - tekst + kontakt */}
           <div className="order-2 md:order-1 max-w-sm">
             <motion.p
               initial={{ opacity: 0, letterSpacing: "0.5em" }}
@@ -43,7 +43,7 @@ export function Hero() {
 
             <h1 className="font-extrabold text-white leading-[1.08] mb-5">
               <span className="sr-only">
-                Używany sprzęt AGD premium Bosch, Siemens, Miele — Krzeszyce, woj. lubuskie.{" "}
+                Używany sprzęt AGD premium Bosch, Siemens, Miele - Krzeszyce, woj. lubuskie.{" "}
               </span>
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
@@ -69,7 +69,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.85 }}
               className="text-white/60 text-sm leading-relaxed mb-10"
             >
-              Wyposażymy Twój dom kompleksowo za 1/2 ceny nowego sprzętu. M.in. Bosch, Siemens i Miele — sprawdzone technicznie, z paragonem lub FV. Stacjonarnie i online.
+              Wyposażymy Twój dom kompleksowo za 1/2 ceny nowego sprzętu. M.in. Bosch, Siemens i Miele - sprawdzone technicznie, z paragonem lub FV. Stacjonarnie i online.
             </motion.p>
 
             <motion.a
@@ -104,7 +104,7 @@ export function Hero() {
               </a>
             </motion.div>
 
-            {/* CTA — INOX style */}
+            {/* CTA - INOX style */}
             <motion.a
               href={company.olxUrl}
               target="_blank"
@@ -122,7 +122,7 @@ export function Hero() {
             </motion.a>
           </div>
 
-          {/* RIGHT — logo + marki */}
+          {/* RIGHT - logo + marki */}
           <div className="order-1 md:order-2 flex flex-col items-center gap-10">
             {/* Logo AMILO */}
             <motion.div
@@ -162,7 +162,7 @@ export function Hero() {
               )}
             </motion.div>
 
-            {/* Marki — loga PNG */}
+            {/* Marki - loga PNG */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}

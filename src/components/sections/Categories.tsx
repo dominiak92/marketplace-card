@@ -28,7 +28,7 @@ export function Offer() {
               <DrawLine className="w-12 mt-4" />
             </div>
 
-            {/* CTA — desktop */}
+            {/* CTA - desktop */}
             <a
               href={company.olxUrl}
               target="_blank"
@@ -89,7 +89,7 @@ export function Offer() {
           ))}
         </StaggerContainer>
 
-        {/* CTA — mobile */}
+        {/* CTA - mobile */}
         <div className="mt-8 sm:hidden">
           <a
             href={company.olxUrl}

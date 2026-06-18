@@ -27,7 +27,7 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-          {/* Lewa kolumna — dane kontaktowe */}
+          {/* Lewa kolumna - dane kontaktowe */}
           <FadeUp delay={0.1} variant="left">
             <div className="border-t border-zinc-800">
 
@@ -99,7 +99,7 @@ export function Contact() {
             </div>
           </FadeUp>
 
-          {/* Prawa kolumna — mapa */}
+          {/* Prawa kolumna - mapa */}
           <FadeUp delay={0.2} variant="right">
             <div className="relative border border-zinc-800 overflow-hidden rounded-sm lg:sticky lg:top-24">
               <div className="aspect-[4/3] lg:aspect-auto lg:h-[380px] w-full bg-zinc-900">

@@ -15,7 +15,7 @@ export function Footer() {
               className="h-8 w-auto opacity-80"
             />
             <p className="text-sm leading-relaxed text-zinc-600">
-              Sprawdzony używany sprzęt AGD premium — m.in. Bosch, Siemens, Miele.
+              Sprawdzony używany sprzęt AGD premium - m.in. Bosch, Siemens, Miele.
             </p>
           </div>
 

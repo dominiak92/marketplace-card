@@ -23,7 +23,7 @@ export function WhyUs() {
               <DrawLine className="w-12 mt-4" />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs sm:text-right">
-              Każde urządzenie trafia do nas ze sprawdzeniem — kupujesz z gwarancją stanu.
+              Każde urządzenie trafia do nas ze sprawdzeniem - kupujesz z gwarancją stanu.
             </p>
           </div>
         </FadeUp>

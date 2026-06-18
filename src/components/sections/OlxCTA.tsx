@@ -16,7 +16,7 @@ export function OlxCTA() {
                 Przeglądaj aktualną ofertę<br className="hidden sm:block" /> na OLX
               </h2>
               <p className="text-red-100/70 text-sm mt-2">
-                Nowe urządzenia dodajemy regularnie — sprawdź co aktualnie mamy.
+                Nowe urządzenia dodajemy regularnie - sprawdź co aktualnie mamy.
               </p>
             </div>
             <a
