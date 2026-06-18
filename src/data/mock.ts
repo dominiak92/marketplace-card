@@ -7,7 +7,7 @@ export const company = {
     "Specjalizujemy się w sprzedaży sprawdzonego technicznie, używanego sprzętu AGD renomowanych marek. Każde urządzenie przechodzi weryfikację przed sprzedażą — kupujesz z pewnością co do stanu.",
   phone: "726 308 069",
   phoneRaw: "726308069",
-  email: "amilo_agd@interia.pl",
+  email: "kontakt@amilo-agd.pl",
   address: {
     street: "ul. Boczna 3",
     postal: "66-435",
@@ -23,7 +23,7 @@ export const company = {
 export const stats = [
   { value: 500, suffix: "+", label: "sprzedanych urządzeń" },
   { value: 100, suffix: "%", label: "sprawdzonych przed sprzedażą" },
-  { value: 14, suffix: " dni", label: "gwarancja rozruchowa" },
+  { value: 1, suffix: " miesiąc", label: "gwarancja rozruchowa" },
   { value: 2023, suffix: "", label: "rok założenia" },
 ]
 

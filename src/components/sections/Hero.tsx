@@ -42,6 +42,9 @@ export function Hero() {
             </motion.p>
 
             <h1 className="font-extrabold text-white leading-[1.08] mb-5">
+              <span className="sr-only">
+                Używany sprzęt AGD premium Bosch, Siemens, Miele — Krzeszyce, woj. lubuskie.{" "}
+              </span>
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
