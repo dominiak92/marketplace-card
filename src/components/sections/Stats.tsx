@@ -19,6 +19,7 @@ export function Stats() {
                 <AnimatedNumber
                   value={stat.value}
                   duration={1.6}
+                  format={stat.value < 10 ? String : undefined}
                   className="text-4xl sm:text-5xl font-black text-slate-900 leading-none tabular-nums"
                 />
                 {stat.suffix && (
